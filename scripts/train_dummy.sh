@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH --job-name=Dummy_test
 #SBATCH --output=logs/Dummy_test_log_%j.log
-#SBATCH --error=logs/Dummy_test_erro_%j.log
-#SBATCH --gres=gpu:2
+#SBATCH --error=logs/Dummy_test_log_%j.log
+#SBATCH --gres=gpu:1
 #SBATCH --partition=GPU-A100
 #SBATCH --mem=32G  # Request memory (adjust as needed)
 #SBATCH --cpus-per-task=4  # Request CPU cores
@@ -16,8 +16,12 @@ source ~/phd_v1_env/bin/activate
 # Navigate to the script directory
 cd ~/EVADIAB_clinical_ML/
 
+# ---- W&B storage location ----
+export WANDB_DIR="$(pwd)/outputs"
+mkdir -p outputs
+
 # Confirm correct Python environment
 echo "✅ Current Python environment: $(which python)"
 
 # Run dataset verification script
-python src/EVADIAB/train.py
+python src/EVADIAB/train.py --config configs/baseline.yaml

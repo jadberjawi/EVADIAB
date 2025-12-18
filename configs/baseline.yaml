@@ -1,0 +1,13 @@
+# configs/baseline.yaml
+project: evadiab-clinical-ml
+run_name: dummy-logreg-config
+
+seed: 42
+
+dataset:
+  n_samples: 200
+  n_features: 10
+
+model:
+  type: logistic_regression
+  max_iter: 1000
