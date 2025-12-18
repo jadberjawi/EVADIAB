@@ -1,4 +1,9 @@
-wandb/
-outputs/
-logs/
 data/
+models/
+outputs/
+wandb/
+logs/
+__pycache__/
+*.pyc
+.env
+venv/

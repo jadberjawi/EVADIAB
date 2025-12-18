@@ -1,13 +1,26 @@
-# configs/baseline.yaml
-project: evadiab-clinical-ml
-run_name: dummy-logreg-config
-
-seed: 42
-
 dataset:
-  n_samples: 200
-  n_features: 10
+  name: kaggle_cardio
+  path: data/raw/kaggle_cardio/cardio_train.csv
+  target: cardio
+  id_col: id
+
+split:
+  test_size: 0.2
+  seed: 42
+  stratify: true
 
 model:
   type: logistic_regression
-  max_iter: 1000
+  params:
+    C: 1.0
+    max_iter: 2000
+
+preprocess:
+  # Kaggle cardio columns commonly include:
+  # age (days), gender (1/2), height, weight, ap_hi, ap_lo, cholesterol (1/2/3), gluc (1/2/3),
+  # smoke (0/1), alco (0/1), active (0/1), cardio (0/1)
+  standardize_numeric: true
+
+wandb:
+  project: evadiab-clinical-ml
+  run_name: kaggle_cardio_baseline_logreg
