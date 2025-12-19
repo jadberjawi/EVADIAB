@@ -24,4 +24,4 @@ mkdir -p outputs
 echo "✅ Current Python environment: $(which python)"
 
 # Run dataset verification script
-python -u src/train.py --config configs/config.yaml
+python src/train.py --config configs/config.yaml
