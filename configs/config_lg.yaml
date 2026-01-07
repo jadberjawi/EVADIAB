@@ -1,0 +1,30 @@
+project:
+  name: evadiab-clinical-ml
+  run_name: evadiab_random_forest_baseline
+  seed: 42
+
+data:
+  csv_path: data/processed/evadiab_clinical_clean.csv
+  label_col: label
+  drop_cols: []   # put ["id"] here if id exists in your CSV
+
+features:
+  continuous: [age, creat, HBA1C, hdl, ldl, tg, BMI_post_imputation]
+  categorical: [Smoke, history_CAD, sex_male]   # treated as numeric (ordinal/binary)
+
+split:
+  test_size: 0.2
+  stratify: true
+
+model:
+  # logistic_regression / random_forest / xgboost
+  type: logistic_regression
+  params:
+    C: 1.0
+    penalty: l2
+    solver: lbfgs
+    max_iter: 5000
+    class_weight: null  # or "balanced" if later you want
+
+wandb:
+  enabled: true

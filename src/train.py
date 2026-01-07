@@ -5,7 +5,7 @@ import joblib
 import wandb
 
 from data_loader import load_clean_csv, make_train_test_split
-from model import build_logreg_pipeline
+from model import build_model_pipeline
 from utils import set_seed, compute_binary_metrics
 
 
@@ -57,7 +57,8 @@ def main():
         })
 
     # Build + fit model
-    pipe = build_logreg_pipeline(
+    pipe = build_model_pipeline(
+        model_type=cfg["model"]["type"],
         continuous_cols=cont,
         categorical_cols=cat,
         params=cfg["model"]["params"],
@@ -77,7 +78,8 @@ def main():
 
     # Save model
     Path("models").mkdir(parents=True, exist_ok=True)
-    model_path = Path("models") / "logreg_pipeline.joblib"
+    model_name = cfg["model"]["type"]
+    model_path = Path("models") / f"{model_name}_pipeline.joblib"
     joblib.dump(pipe, model_path)
     print(f"💾 Saved model to: {model_path}")
 
