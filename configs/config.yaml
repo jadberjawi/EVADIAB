@@ -1,30 +1,29 @@
 project:
   name: evadiab-clinical-ml
-  run_name: kaggle_cardio_mlp_baseline
+  run_name: evadiab_logreg_baseline
   seed: 42
 
 data:
-  raw_csv_path: data/raw/kaggle_cardio/cardio_train.csv
-  sep: ";"              # Kaggle cardio is typically ';'
-  target_col: cardio
-  id_col: id
+  csv_path: data/processed/evadiab_clinical_clean.csv
+  label_col: label
+  drop_cols: []   # put ["id"] here if id exists in your CSV
+
+features:
+  continuous: [age, creat, HBA1C, hdl, ldl, tg, BMI_post_imputation]
+  categorical: [Smoke, history_CAD, sex_male]   # treated as numeric (ordinal/binary)
 
 split:
   test_size: 0.2
   stratify: true
 
-train:
-  epochs: 20
-  batch_size: 512
-  lr: 1e-3
-  weight_decay: 1e-4
-  num_workers: 2
-  device: auto          # auto | cpu | cuda
-
 model:
-  hidden_dims: [128, 64]
-  dropout: 0.2
+  type: logistic_regression
+  params:
+    C: 1.0
+    penalty: l2
+    solver: lbfgs
+    max_iter: 5000
+    class_weight: null  # or "balanced" if later you want
 
 wandb:
   enabled: true
-  log_every_steps: 20

@@ -1,0 +1,153 @@
+{
+  "input_file": "/Users/jad/Desktop/PhD/Clinical Evadiab/EVADIAB/data/raw/EVADIAB_clinical_Data.xlsx",
+  "sheet": 0,
+  "rows_before_drop_label_na": 168,
+  "rows_after_drop_label_na": 167,
+  "rows_after_drop_invalid_label": 167,
+  "columns_present": [
+    "age",
+    "creat",
+    "HBA1C",
+    "hdl",
+    "ldl",
+    "tg",
+    "Smoke",
+    "history_CAD",
+    "BMI_post_imputation",
+    "label",
+    "sex_male"
+  ],
+  "missing_original_columns": [],
+  "missingness": {
+    "age": {
+      "n_missing": 0,
+      "pct_missing": 0.0
+    },
+    "creat": {
+      "n_missing": 7,
+      "pct_missing": 4.191616766467066
+    },
+    "HBA1C": {
+      "n_missing": 8,
+      "pct_missing": 4.790419161676647
+    },
+    "hdl": {
+      "n_missing": 15,
+      "pct_missing": 8.982035928143713
+    },
+    "ldl": {
+      "n_missing": 10,
+      "pct_missing": 5.9880239520958085
+    },
+    "tg": {
+      "n_missing": 11,
+      "pct_missing": 6.58682634730539
+    },
+    "Smoke": {
+      "n_missing": 0,
+      "pct_missing": 0.0
+    },
+    "history_CAD": {
+      "n_missing": 0,
+      "pct_missing": 0.0
+    },
+    "BMI_post_imputation": {
+      "n_missing": 0,
+      "pct_missing": 0.0
+    },
+    "label": {
+      "n_missing": 0,
+      "pct_missing": 0.0
+    },
+    "sex_male": {
+      "n_missing": 0,
+      "pct_missing": 0.0
+    }
+  },
+  "basic_stats": {
+    "age": {
+      "count": 167,
+      "mean": 65.05261258311376,
+      "std": 12.439287566980598,
+      "min": 27.73424658,
+      "p25": 57.813698630000005,
+      "median": 64.54794521,
+      "p75": 73.606849315,
+      "max": 88.19178082
+    },
+    "creat": {
+      "count": 160,
+      "mean": 115.05625,
+      "std": 92.15854856658373,
+      "min": 43.0,
+      "p25": 67.75,
+      "median": 85.0,
+      "p75": 120.0,
+      "max": 684.0
+    },
+    "HBA1C": {
+      "count": 159,
+      "mean": 8.08364779874214,
+      "std": 2.4102070454115463,
+      "min": 4.0,
+      "p25": 6.5,
+      "median": 7.5,
+      "p75": 9.05,
+      "max": 19.9
+    },
+    "hdl": {
+      "count": 152,
+      "mean": 0.4726973684210527,
+      "std": 0.17587612435705063,
+      "min": 0.2,
+      "p25": 0.36,
+      "median": 0.425,
+      "p75": 0.56,
+      "max": 1.21
+    },
+    "ldl": {
+      "count": 157,
+      "mean": 0.9701910828025477,
+      "std": 0.37856251615541997,
+      "min": 0.24,
+      "p25": 0.68,
+      "median": 0.93,
+      "p75": 1.22,
+      "max": 2.3
+    },
+    "tg": {
+      "count": 156,
+      "mean": 1.4709615384615387,
+      "std": 0.9662697004434306,
+      "min": 0.23,
+      "p25": 0.82,
+      "median": 1.255,
+      "p75": 1.775,
+      "max": 6.33
+    },
+    "BMI_post_imputation": {
+      "count": 167,
+      "mean": 28.742222301050386,
+      "std": 5.408468444517942,
+      "min": 16.2981859410431,
+      "p25": 25.553152457906698,
+      "median": 28.0816326530612,
+      "p75": 31.8462064727399,
+      "max": 44.63400119024
+    },
+    "sex_male": {
+      "count": 167,
+      "mean": 0.5808383233532934,
+      "std": 0.4949058729705947,
+      "min": 0.0,
+      "p25": 0.0,
+      "median": 1.0,
+      "p75": 1.0,
+      "max": 1.0
+    }
+  },
+  "label_distribution": {
+    "0": 95,
+    "1": 72
+  }
+}

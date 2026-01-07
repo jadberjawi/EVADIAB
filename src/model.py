@@ -1,16 +1,30 @@
-import torch
-import torch.nn as nn
+from sklearn.pipeline import Pipeline
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import StandardScaler
+from sklearn.impute import SimpleImputer
+from sklearn.linear_model import LogisticRegression
 
-class MLPBinaryClassifier(nn.Module):
-    def __init__(self, input_dim: int, hidden_dims=(128, 64), dropout=0.2):
-        super().__init__()
-        layers = []
-        prev = input_dim
-        for h in hidden_dims:
-            layers += [nn.Linear(prev, h), nn.ReLU(), nn.Dropout(dropout)]
-            prev = h
-        layers += [nn.Linear(prev, 1)]  # logits
-        self.net = nn.Sequential(*layers)
 
-    def forward(self, x):
-        return self.net(x).squeeze(-1)  # [B]
+def build_logreg_pipeline(continuous_cols: list, categorical_cols: list, params: dict) -> Pipeline:
+    # In your case, categorical are already numeric (0/1/2), so we treat them as numeric.
+    # If later you want one-hot for Smoke, we can change it.
+    num_cols = list(continuous_cols) + list(categorical_cols)
+
+    numeric_pipe = Pipeline(steps=[
+        ("imputer", SimpleImputer(strategy="median")),
+        ("scaler", StandardScaler()),
+    ])
+
+    preprocessor = ColumnTransformer(
+        transformers=[("num", numeric_pipe, num_cols)],
+        remainder="drop",
+        verbose_feature_names_out=False,
+    )
+
+    model = LogisticRegression(**params)
+
+    pipe = Pipeline(steps=[
+        ("preprocess", preprocessor),
+        ("model", model),
+    ])
+    return pipe
