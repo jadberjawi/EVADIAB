@@ -1,11 +1,8 @@
 #!/bin/bash
-#SBATCH --job-name=Dummy_test
-#SBATCH --output=logs/Dummy_test_log_%j.log
-#SBATCH --error=logs/Dummy_test_log_%j.log
-#SBATCH --gres=gpu:1
-#SBATCH --partition=GPU-A100
-#SBATCH --mem=32G  # Request memory (adjust as needed)
-#SBATCH --cpus-per-task=4  # Request CPU cores
+#SBATCH --job-name=Clean_EVADIAB
+#SBATCH --output=logs/Clean_EVADIAB_log_%j.log
+#SBATCH --error=logs/Clean_EVADIAB_log_%j.log
+#SBATCH --cpus-per-task=4
 
 # Load the correct CUDA module
 module load /softs/modules/cuda/12.8.1_570.124.06
@@ -14,7 +11,7 @@ module load /softs/modules/cuda/12.8.1_570.124.06
 source ~/phd_v1_env/bin/activate
 
 # Navigate to the script directory
-cd ~/EVADIAB_clinical_ML/
+cd ~/EVADIAB/
 
 # ---- W&B storage location ----
 export WANDB_DIR="$(pwd)/outputs"
@@ -24,4 +21,7 @@ mkdir -p outputs
 echo "✅ Current Python environment: $(which python)"
 
 # Run dataset verification script
-python src/train.py --config configs/config.yaml
+python -m src.preprocess.clean \
+  --input data/raw/EVADIAB_clinical_Data.xlsx \
+  --output data/processed/evadiab_clinical_clean.csv \
+  --sheet 0
