@@ -1,7 +1,7 @@
 #!/bin/bash
-#SBATCH --job-name=train_Xboost_EVADIAB
-#SBATCH --output=logs/train_Xboost_EVADIAB_log_%j.log
-#SBATCH --error=logs/train_Xboost_EVADIAB_log_%j.log
+#SBATCH --job-name=train_radiomics_only_EVADIAB
+#SBATCH --output=logs/train_radiomics_only_EVADIAB_log_%j.log
+#SBATCH --error=logs/train_radiomics_only_EVADIAB_log_%j.log
 #SBATCH --gres=gpu:1
 #SBATCH --partition=GPU-A100
 #SBATCH --mem=32G  # Request memory (adjust as needed)
@@ -24,4 +24,4 @@ mkdir -p outputs
 echo "✅ Current Python environment: $(which python)"
 
 # Run dataset verification script
-python -m src.train --config configs/config_xgboost.yaml
+python -m src.train --config configs/config_radiomics_only.yaml

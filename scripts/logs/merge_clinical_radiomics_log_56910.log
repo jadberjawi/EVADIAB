@@ -1,0 +1,6 @@
+✅ Current Python environment: /nfs/homes/jad.berjawi/phd_v1_env/bin/python
+Clinical patients:  164
+Radiomics patients: 164
+Merged patients:   159
+Final shape:       (161, 22)
+✅ Saved merged dataset to: data/processed/evadiab_clinical_radiomics_merged.csv

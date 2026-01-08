@@ -1,7 +1,7 @@
 #!/bin/bash
-#SBATCH --job-name=stability_logreg_EVADIAB
-#SBATCH --output=logs/stability_logreg_EVADIAB_log_%j.log
-#SBATCH --error=logs/stability_logreg_EVADIAB_log_%j.log
+#SBATCH --job-name=stability_radiomics_only
+#SBATCH --output=logs/stability_radiomics_only_log_%j.log
+#SBATCH --error=logs/stability_radiomics_only_log_%j.log
 #SBATCH --gres=gpu:1
 #SBATCH --partition=GPU-A100
 #SBATCH --mem=32G  # Request memory (adjust as needed)
@@ -24,4 +24,4 @@ mkdir -p outputs
 echo "✅ Current Python environment: $(which python)"
 
 # Run dataset verification script
-python -m src.stability_logreg --config configs/config_lg.yaml --repeats 50
+python -m src.stability_logreg --config configs/config_radiomics_only.yaml --repeats 50
