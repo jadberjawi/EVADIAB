@@ -1,0 +1,49 @@
+✅ Current Python environment: /nfs/homes/jad.berjawi/phd_v1_env/bin/python
+wandb: Currently logged in as: jad-berjawi (jad-berjawi-uga) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.23.1
+wandb: Run data is saved locally in /home/dist/jad.berjawi/EVADIAB/outputs/wandb/run-20260108_162243-5mdjw8e0
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run clinical_plus_radiomics_logreg
+wandb: ⭐️ View project at https://wandb.ai/jad-berjawi-uga/evadiab-clinical-ml
+wandb: 🚀 View run at https://wandb.ai/jad-berjawi-uga/evadiab-clinical-ml/runs/5mdjw8e0
+/nfs/homes/jad.berjawi/phd_v1_env/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:1135: FutureWarning: 'penalty' was deprecated in version 1.8 and will be removed in 1.10. To avoid this warning, leave 'penalty' set to its default value and use 'l1_ratio' or 'C' instead. Use l1_ratio=0 instead of penalty='l2', l1_ratio=1 instead of penalty='l1', and C=np.inf instead of penalty=None.
+  warnings.warn(
+wandb: WARNING Symlinked 1 file into the W&B run directory; call wandb.save again to sync new files.
+wandb: updating run metadata; uploading summary
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb: data/event_rate_total ▁
+wandb:    data/missing_total ▁
+wandb:           data/n_test ▁
+wandb:          data/n_total ▁
+wandb:          data/n_train ▁
+wandb:              test/acc ▁
+wandb:            test/brier ▁
+wandb:       test/event_rate ▁
+wandb:           test/pr_auc ▁
+wandb:          test/roc_auc ▁
+wandb: 
+wandb: Run summary:
+wandb: data/event_rate_total 0.4472
+wandb:    data/missing_total 55
+wandb:           data/n_test 33
+wandb:          data/n_total 161
+wandb:          data/n_train 128
+wandb:              test/acc 0.81818
+wandb:            test/brier 0.17744
+wandb:       test/event_rate 0.45455
+wandb:           test/pr_auc 0.80766
+wandb:          test/roc_auc 0.85556
+wandb: 
+wandb: 🚀 View run clinical_plus_radiomics_logreg at: https://wandb.ai/jad-berjawi-uga/evadiab-clinical-ml/runs/5mdjw8e0
+wandb: ⭐️ View project at: https://wandb.ai/jad-berjawi-uga/evadiab-clinical-ml
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 1 other file(s)
+wandb: Find logs at: /home/dist/jad.berjawi/EVADIAB/outputs/wandb/run-20260108_162243-5mdjw8e0/logs
+✅ Test metrics:
+  roc_auc: 0.8555555555555556
+  pr_auc: 0.8076644651644651
+  brier: 0.17744247830111223
+  acc: 0.8181818181818182
+  event_rate: 0.45454545454545453
+💾 Saved model to: models/logistic_regression_pipeline.joblib
