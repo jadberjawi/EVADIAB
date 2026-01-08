@@ -1,0 +1,52 @@
+project:
+  name: evadiab-clinical-ml
+  run_name: clinical_plus_radiomics_logreg
+  seed: 42
+
+data:
+  csv_path: data/processed/evadiab_clinical_radiomics_merged.csv
+  label_col: label
+  drop_cols: [patient_id]
+
+features:
+  continuous:
+    # ---- clinical ----
+    - age
+    - creat
+    - HBA1C
+    - hdl
+    - ldl
+    - tg
+    - BMI_post_imputation
+    # ---- radiomics REST ----
+    - ngtdm_Contrast_REST
+    - entropy_Lrb_REST
+    - shape_Flatness_REST
+    - glcm_Idmn_REST
+    - firstorder_Kurtosis_REST
+    # ---- radiomics STRESS ----
+    - ngtdm_Contrast_STRESS
+    - entropy_Lrb_STRESS
+    - shape_Flatness_STRESS
+    - glcm_Idmn_STRESS
+    - firstorder_Kurtosis_STRESS
+
+  categorical:
+    - Smoke
+    - history_CAD
+    - sex_male
+
+split:
+  test_size: 0.2
+  stratify: true
+
+model:
+  type: logistic_regression
+  params:
+    C: 1.0
+    penalty: l2
+    solver: lbfgs
+    max_iter: 5000
+
+wandb:
+  enabled: true
