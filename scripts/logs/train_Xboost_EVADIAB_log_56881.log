@@ -1,0 +1,48 @@
+✅ Current Python environment: /nfs/homes/jad.berjawi/phd_v1_env/bin/python
+wandb: Currently logged in as: jad-berjawi (jad-berjawi-uga) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run wmu15qbg
+wandb: Tracking run with wandb version 0.23.1
+wandb: Run data is saved locally in /home/dist/jad.berjawi/EVADIAB/outputs/wandb/run-20260108_111207-wmu15qbg
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run evadiab_xgboost_baseline
+wandb: ⭐️ View project at https://wandb.ai/jad-berjawi-uga/evadiab-clinical-ml
+wandb: 🚀 View run at https://wandb.ai/jad-berjawi-uga/evadiab-clinical-ml/runs/wmu15qbg
+wandb: WARNING Symlinked 1 file into the W&B run directory; call wandb.save again to sync new files.
+wandb: updating run metadata
+wandb: uploading models/xgboost_pipeline.joblib; uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb: data/event_rate_total ▁
+wandb:    data/missing_total ▁
+wandb:           data/n_test ▁
+wandb:          data/n_total ▁
+wandb:          data/n_train ▁
+wandb:              test/acc ▁
+wandb:            test/brier ▁
+wandb:       test/event_rate ▁
+wandb:           test/pr_auc ▁
+wandb:          test/roc_auc ▁
+wandb: 
+wandb: Run summary:
+wandb: data/event_rate_total 0.43114
+wandb:    data/missing_total 51
+wandb:           data/n_test 34
+wandb:          data/n_total 167
+wandb:          data/n_train 133
+wandb:              test/acc 0.58824
+wandb:            test/brier 0.27471
+wandb:       test/event_rate 0.44118
+wandb:           test/pr_auc 0.54087
+wandb:          test/roc_auc 0.62456
+wandb: 
+wandb: 🚀 View run evadiab_xgboost_baseline at: https://wandb.ai/jad-berjawi-uga/evadiab-clinical-ml/runs/wmu15qbg
+wandb: ⭐️ View project at: https://wandb.ai/jad-berjawi-uga/evadiab-clinical-ml
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 1 other file(s)
+wandb: Find logs at: /home/dist/jad.berjawi/EVADIAB/outputs/wandb/run-20260108_111207-wmu15qbg/logs
+✅ Test metrics:
+  roc_auc: 0.6245614035087719
+  pr_auc: 0.540874078953789
+  brier: 0.27470675985365683
+  acc: 0.5882352941176471
+  event_rate: 0.4411764705882353
+💾 Saved model to: models/xgboost_pipeline.joblib

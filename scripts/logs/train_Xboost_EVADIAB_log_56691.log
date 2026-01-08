@@ -1,0 +1,7 @@
+✅ Current Python environment: /nfs/homes/jad.berjawi/phd_v1_env/bin/python
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/nfs/homes/jad.berjawi/EVADIAB/src/train.py", line 7, in <module>
+    from data_loader import load_clean_csv, make_train_test_split
+ModuleNotFoundError: No module named 'data_loader'

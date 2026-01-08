@@ -4,9 +4,9 @@ from pathlib import Path
 import joblib
 import wandb
 
-from data_loader import load_clean_csv, make_train_test_split
-from model import build_model_pipeline
-from utils import set_seed, compute_binary_metrics
+from src.data_loader import load_clean_csv, make_train_test_split
+from src.model import build_model_pipeline
+from src.utils import set_seed, compute_binary_metrics
 
 
 def main():
