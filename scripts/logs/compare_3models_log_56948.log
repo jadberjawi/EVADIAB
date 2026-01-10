@@ -1,0 +1,8 @@
+✅ Current Python environment: /nfs/homes/jad.berjawi/phd_v1_env/bin/python
+/nfs/homes/jad.berjawi/EVADIAB/src/report/plot_compare_models.py:38: MatplotlibDeprecationWarning: The 'labels' parameter of boxplot() has been renamed 'tick_labels' since Matplotlib 3.9; support for the old name will be dropped in 3.11.
+  plt.boxplot(vals, labels=labels, showfliers=False)
+/nfs/homes/jad.berjawi/EVADIAB/src/report/plot_compare_models.py:38: MatplotlibDeprecationWarning: The 'labels' parameter of boxplot() has been renamed 'tick_labels' since Matplotlib 3.9; support for the old name will be dropped in 3.11.
+  plt.boxplot(vals, labels=labels, showfliers=False)
+/nfs/homes/jad.berjawi/EVADIAB/src/report/plot_compare_models.py:38: MatplotlibDeprecationWarning: The 'labels' parameter of boxplot() has been renamed 'tick_labels' since Matplotlib 3.9; support for the old name will be dropped in 3.11.
+  plt.boxplot(vals, labels=labels, showfliers=False)
+✅ Saved comparison plots + summary to: outputs/compare_models
